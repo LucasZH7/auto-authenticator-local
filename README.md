@@ -120,3 +120,10 @@ Highlights:
 - Fast 6-digit generation
 - Small and readable implementation
 - Built for legitimate, authorized access workflows
+
+## Promo assets
+
+Two ready-to-use promo images are included:
+
+- `assets/promo-github.svg` for GitHub social previews or README embeds
+- `assets/promo-clawhub.svg` for ClawHub listing art or screenshots

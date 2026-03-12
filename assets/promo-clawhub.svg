@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Auto Authenticator Local ClawHub promo image">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#071310"/>
+      <stop offset="100%" stop-color="#123E36"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#2EE89A"/>
+      <stop offset="100%" stop-color="#C0FFE8"/>
+    </linearGradient>
+    <filter id="beamGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg2)"/>
+  <circle cx="1170" cy="150" r="240" fill="#87FFD9" opacity="0.10"/>
+  <circle cx="270" cy="750" r="260" fill="#28E89A" opacity="0.08"/>
+
+  <g transform="translate(92 84)">
+    <text x="0" y="0" font-size="22" font-family="Helvetica, Arial, sans-serif" fill="#96F6D3" letter-spacing="5">CLAWHUB FEATURE IMAGE</text>
+    <text x="0" y="100" font-size="88" font-weight="700" font-family="Helvetica, Arial, sans-serif" fill="#F5FFF9">Desktop-safe verification,</text>
+    <text x="0" y="186" font-size="88" font-weight="700" font-family="Helvetica, Arial, sans-serif" fill="#F5FFF9">without leaving your machine.</text>
+    <text x="0" y="246" font-size="28" font-family="Helvetica, Arial, sans-serif" fill="#CAFBE8">A local TOTP assistant for authorized access workflows.</text>
+  </g>
+
+  <g transform="translate(88 336)">
+    <rect width="1224" height="464" rx="38" fill="#0B1715" stroke="#74F5C8" stroke-opacity="0.18"/>
+
+    <g transform="translate(54 58)">
+      <rect width="484" height="344" rx="26" fill="#0E211D"/>
+      <rect x="24" y="22" width="436" height="52" rx="14" fill="#0A1412" stroke="#71F7C8" stroke-opacity="0.12"/>
+      <text x="44" y="56" font-size="22" font-family="Menlo, Monaco, monospace" fill="#B9FFE3">Authorized desktop session</text>
+
+      <rect x="34" y="104" width="190" height="194" rx="20" fill="#122722"/>
+      <path d="M129 136c-27.6 0-50 22.4-50 50v19H67c-11 0-20 9-20 20v54c0 11 9 20 20 20h124c11 0 20-9 20-20v-54c0-11-9-20-20-20h-12v-19c0-27.6-22.4-50-50-50Zm-28 69v-19c0-15.5 12.5-28 28-28s28 12.5 28 28v19H101Z" fill="#ECFFF7"/>
+      <text x="129" y="274" text-anchor="middle" font-size="26" font-family="Menlo, Monaco, monospace" fill="#36E89A">LOCAL</text>
+
+      <g transform="translate(254 114)">
+        <text x="0" y="24" font-size="20" font-family="Helvetica, Arial, sans-serif" fill="#8EEFD0">Current one-time code</text>
+        <text x="0" y="118" font-size="86" font-family="Menlo, Monaco, monospace" fill="url(#beam)" filter="url(#beamGlow)">481 205</text>
+        <text x="0" y="164" font-size="18" font-family="Helvetica, Arial, sans-serif" fill="#A5F0D8">Secure store -> explicit request -> fill approved flow</text>
+
+        <rect x="0" y="204" width="202" height="48" rx="24" fill="#17372F"/>
+        <text x="28" y="235" font-size="20" font-family="Helvetica, Arial, sans-serif" fill="#DFFFF2">macOS</text>
+        <rect x="216" y="204" width="202" height="48" rx="24" fill="#17372F"/>
+        <text x="244" y="235" font-size="20" font-family="Helvetica, Arial, sans-serif" fill="#DFFFF2">Windows</text>
+        <rect x="108" y="268" width="202" height="48" rx="24" fill="#17372F"/>
+        <text x="158" y="299" font-size="20" font-family="Helvetica, Arial, sans-serif" fill="#DFFFF2">Linux</text>
+      </g>
+    </g>
+
+    <g transform="translate(616 66)">
+      <text x="0" y="26" font-size="24" font-family="Helvetica, Arial, sans-serif" fill="#96F6D3">Designed for public trust</text>
+
+      <g font-size="34" font-family="Helvetica, Arial, sans-serif" fill="#F4FFF9">
+        <text x="0" y="104">Local-first secret handling</text>
+        <text x="0" y="166">System credential vault integration</text>
+        <text x="0" y="228">Clear, readable implementation</text>
+        <text x="0" y="290">Great for repetitive verified sign-ins</text>
+      </g>
+
+      <g transform="translate(0 330)">
+        <rect width="488" height="52" rx="26" fill="#102521"/>
+        <rect width="352" height="52" rx="26" fill="url(#beam)"/>
+        <text x="24" y="34" font-size="20" font-family="Helvetica, Arial, sans-serif" fill="#06201A">Privacy-first productivity</text>
+      </g>
+    </g>
+  </g>
+</svg>
