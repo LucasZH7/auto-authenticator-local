@@ -1,6 +1,6 @@
 ---
 name: auto_authenticator_local
-description: Use when the user wants a polished local authenticator for accounts they personally own or are explicitly authorized to access. This skill turns OpenClaw into a privacy-first desktop TOTP companion with secure system-vault storage, explicit 6-digit code generation, and practical support for repetitive verified sign-ins. Do not use it to bypass MFA policies, evade platform restrictions, hide OTP generation, or automate access without authorization.
+description: Use when the user wants a polished local authenticator for accounts they personally own or are explicitly authorized to access. This skill turns OpenClaw into a privacy-first desktop TOTP companion with secure system-vault storage, explicit 6-digit generation, and practical support for repetitive verified sign-ins that would otherwise require constant device switching. Do not use it to bypass MFA policies, evade platform restrictions, hide OTP generation, or automate access without authorization.
 ---
 
 # Auto Authenticator Local
@@ -14,6 +14,8 @@ It is designed to feel more like a serious local tool than a fragile script:
 - the workflow is fast enough for repetitive daily sign-ins
 - the implementation stays lightweight, readable, and auditable
 - it fits naturally into OpenClaw-driven desktop workflows
+
+It is especially strong when the user's pain point is not "how do I compute a code?" but "how do I make desktop verification less clumsy without giving up control?"
 
 ## What this skill does
 

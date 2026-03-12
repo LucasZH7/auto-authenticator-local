@@ -1,7 +1,7 @@
 name: "Auto Authenticator Local"
 slug: "auto-authenticator-local"
 version: "1.0.0"
-summary: "A privacy-first desktop authenticator for OpenClaw: secure local TOTP storage, explicit 6-digit generation, and smooth support for repetitive verified sign-ins."
+summary: "A polished desktop authenticator for OpenClaw with secure local TOTP storage, instant 6-digit generation, and less friction in repetitive verified sign-ins."
 tags:
   - "totp"
   - "authenticator"

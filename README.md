@@ -1,6 +1,20 @@
+<p align="center">
+  <img src="./assets/promo-github.svg" alt="Auto Authenticator Local banner" width="100%" />
+</p>
+
 # Auto Authenticator Local
 
-Auto Authenticator Local is a privacy-first desktop authenticator for OpenClaw users who want a faster, cleaner way to handle TOTP-protected sign-ins on their own machine.
+**A desktop-native authenticator for OpenClaw users who want secure local TOTP handling, faster verified sign-ins, and less friction in repetitive workflows.**
+
+Auto Authenticator Local turns desktop verification into something that feels intentional instead of annoying. Secrets stay in the operating system vault, codes are generated only on request, and the whole flow is lightweight enough to trust and fast enough to use every day.
+
+## At a glance
+
+- Local-first TOTP storage with system credential vaults
+- Cross-platform support for macOS, Windows, and Linux
+- Explicit 6-digit code generation for approved sign-in flows
+- OpenClaw-friendly structure for desktop automation workflows
+- Small, readable codebase that advanced users can actually audit
 
 It is built for legitimate account owners and authorized operators who want:
 
@@ -10,6 +24,13 @@ It is built for legitimate account owners and authorized operators who want:
 - a simple OpenClaw-compatible skill folder they can install or publish
 
 In practice, it gives people something many authenticator flows are missing: a desktop-native, automation-friendly, security-aware path for repetitive verification work.
+
+## Why it stands out
+
+- It removes the constant phone-checking ritual from desktop-heavy workflows.
+- It keeps TOTP secrets under system-level protection instead of hidden plaintext files.
+- It gives OpenClaw a clean bridge into verification-aware local automation.
+- It feels like a real tool, not a throwaway OTP snippet.
 
 ## Why this exists
 
@@ -22,9 +43,7 @@ Many people already use TOTP-based login prompts during approved automation or r
 
 ## Positioning
 
-This is not just another OTP script.
-
-Auto Authenticator Local is meant to be:
+This is not just another OTP script. Auto Authenticator Local is meant to be:
 
 - a desktop companion for TOTP-heavy workflows
 - a local-first alternative to phone-only verification habits
@@ -43,6 +62,13 @@ This project is not for bypassing MFA policy, evading anti-abuse systems, or hid
 - Use the same folder as an OpenClaw skill
 - Publishable to ClawHub as a transparent, local-first utility
 - Cross-platform secure storage through the operating system key store
+
+## Ideal use cases
+
+- repetitive admin sign-ins on a desktop
+- internal tools that require frequent, legitimate TOTP verification
+- local automation setups where users want control over secret handling
+- users who prefer desktop-native flows over phone-only authenticator habits
 
 ## Why people will like it
 
@@ -69,6 +95,14 @@ curl -fsSL https://raw.githubusercontent.com/LucasZH7/auto-authenticator-local/m
 ```
 
 This installer clones the repository into `~/.openclaw/skills/auto-authenticator-local` by default and installs Python dependencies locally for the tool.
+
+Typical setup flow:
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 scripts/totp_add.py --alias github-work --issuer GitHub --account lucas@example.com --seed JBSWY3DPEHPK3PXP
+python3 scripts/totp_code.py --alias github-work
+```
 
 Install dependency:
 
@@ -137,6 +171,10 @@ Highlights:
 ## Suggested ClawHub blurb
 
 Auto Authenticator Local turns OpenClaw into a desktop-friendly authenticator for approved sign-in workflows. It stores TOTP secrets in the system credential vault, generates codes only on explicit request, and removes the usual friction of switching devices just to finish a login. The result is local, fast, privacy-first verification support that still feels transparent and auditable.
+
+## Suggested GitHub tagline
+
+Secure local TOTP storage, instant desktop code generation, and a smoother verification layer for OpenClaw-powered workflows.
 
 ## Promo assets
 
