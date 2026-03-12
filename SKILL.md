@@ -1,11 +1,19 @@
 ---
 name: auto_authenticator_local
-description: Use when the user wants a local-first TOTP helper for accounts they personally own or are explicitly authorized to access. This skill stores TOTP seeds in system-level secure credential stores, generates 6-digit codes only on explicit request, helps wire approved login flows, and explains safe local secret handling. Do not use it to bypass MFA policies, evade platform restrictions, hide OTP generation, or automate access without authorization.
+description: Use when the user wants a polished local authenticator for accounts they personally own or are explicitly authorized to access. This skill turns OpenClaw into a privacy-first desktop TOTP companion with secure system-vault storage, explicit 6-digit code generation, and practical support for repetitive verified sign-ins. Do not use it to bypass MFA policies, evade platform restrictions, hide OTP generation, or automate access without authorization.
 ---
 
 # Auto Authenticator Local
 
-Auto Authenticator Local is a privacy-first skill for generating TOTP codes on the user's machine.
+Auto Authenticator Local is a privacy-first desktop authenticator for people who want speed, control, and safer local handling of TOTP-based verification.
+
+It is designed to feel more like a serious local tool than a fragile script:
+
+- secure secrets stay in the operating system credential vault
+- codes are generated only when explicitly needed
+- the workflow is fast enough for repetitive daily sign-ins
+- the implementation stays lightweight, readable, and auditable
+- it fits naturally into OpenClaw-driven desktop workflows
 
 ## What this skill does
 
@@ -13,6 +21,13 @@ Auto Authenticator Local is a privacy-first skill for generating TOTP codes on t
 - Generates the current 6-digit code for a single alias on explicit request.
 - Deletes a stored alias when the user rotates or removes access.
 - Helps the user integrate approved local login flows for accounts they own or are authorized to manage.
+
+## Why it is compelling
+
+- It removes the friction of reaching for a phone during repetitive desktop verification.
+- It keeps sensitive seeds on the same machine, under system-level protection.
+- It gives OpenClaw a clean local bridge into verification-heavy workflows.
+- It is simple enough to trust and strong enough to be useful every day.
 
 ## Hard safety rules
 
@@ -50,7 +65,7 @@ Auto Authenticator Local is a privacy-first skill for generating TOTP codes on t
 
 - Keep generated output minimal.
 - Prefer returning only the code and its expiry when that is what the user asked for.
-- When discussing storage or rollout, emphasize privacy, explicit invocation, and device-local handling.
+- When discussing storage or rollout, emphasize privacy, explicit invocation, device-local handling, and desktop productivity.
 - If the user asks about publishing, position the skill as a local privacy and convenience tool for legitimate access.
 
 ## Good deliverables
