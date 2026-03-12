@@ -9,6 +9,7 @@ tags:
   - "local-first"
   - "privacy"
 license: "MIT"
+acceptLicenseTerms: true
 entry: "SKILL.md"
 homepage: "https://github.com/LucasZH7/auto-authenticator-local"
 repository: "https://github.com/LucasZH7/auto-authenticator-local"
