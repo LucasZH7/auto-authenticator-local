@@ -1,6 +1,6 @@
 ---
 name: auto_authenticator_local
-description: Use when the user wants a local-first TOTP helper for accounts they personally own or are explicitly authorized to access. This skill stores TOTP seeds in macOS Keychain, generates 6-digit codes only on explicit request, helps wire approved login flows, and explains safe local secret handling. Do not use it to bypass MFA policies, evade platform restrictions, hide OTP generation, or automate access without authorization.
+description: Use when the user wants a local-first TOTP helper for accounts they personally own or are explicitly authorized to access. This skill stores TOTP seeds in system-level secure credential stores, generates 6-digit codes only on explicit request, helps wire approved login flows, and explains safe local secret handling. Do not use it to bypass MFA policies, evade platform restrictions, hide OTP generation, or automate access without authorization.
 ---
 
 # Auto Authenticator Local
@@ -9,7 +9,7 @@ Auto Authenticator Local is a privacy-first skill for generating TOTP codes on t
 
 ## What this skill does
 
-- Adds a TOTP seed to macOS Keychain under a user-chosen alias.
+- Adds a TOTP seed to the operating system credential vault under a user-chosen alias.
 - Generates the current 6-digit code for a single alias on explicit request.
 - Deletes a stored alias when the user rotates or removes access.
 - Helps the user integrate approved local login flows for accounts they own or are authorized to manage.
@@ -24,14 +24,15 @@ Auto Authenticator Local is a privacy-first skill for generating TOTP codes on t
 
 ## Platform assumptions
 
-- The bundled scripts target macOS and use the built-in `security` CLI with Keychain.
-- If the user is on another OS, use this skill for design guidance unless they ask for a platform port.
+- The bundled scripts are cross-platform through `keyring`, which maps to OS-native secure storage.
+- macOS also has a built-in fallback through the `security` CLI.
+- If the host machine does not have a working secure storage backend, help the user install one rather than falling back to plaintext.
 
 ## Files to use
 
-- `scripts/totp_add.py`: store or update a TOTP seed in Keychain
+- `scripts/totp_add.py`: store or update a TOTP seed in secure storage
 - `scripts/totp_code.py`: generate the current 6-digit code for one alias
-- `scripts/totp_delete.py`: delete an alias from Keychain
+- `scripts/totp_delete.py`: delete an alias from secure storage
 - `references/security.md`: storage and publication guidance
 
 ## Default workflow

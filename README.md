@@ -1,6 +1,6 @@
 # Auto Authenticator Local
 
-Auto Authenticator Local is an OpenClaw skill and local toolset for generating TOTP codes from secrets stored on the same Mac.
+Auto Authenticator Local is an OpenClaw skill and local toolset for generating TOTP codes from secrets stored in the operating system's secure credential store.
 
 It is built for legitimate account owners and authorized operators who want:
 
@@ -13,9 +13,9 @@ It is built for legitimate account owners and authorized operators who want:
 
 Many people already use TOTP-based login prompts during approved automation or repetitive admin work. This project makes that workflow local, small, and auditable:
 
-- TOTP seeds are stored in macOS Keychain
+- TOTP seeds are stored in the system credential vault
 - codes are generated only when explicitly requested
-- the implementation is pure Python plus the built-in `security` CLI
+- the implementation is pure Python with OS-native secure storage via `keyring`
 - no secrets are written to git or plaintext config files
 
 ## Safety boundary
@@ -29,23 +29,30 @@ This project is not for bypassing MFA policy, evading anti-abuse systems, or hid
 - Delete aliases cleanly during rotation or offboarding
 - Use the same folder as an OpenClaw skill
 - Publishable to ClawHub as a transparent, local-first utility
+- Cross-platform secure storage through the operating system key store
 
 ## Why people will like it
 
-- It is local-first: secrets stay in macOS Keychain instead of random config files.
-- It is small: pure Python plus built-in system tooling.
+- It is local-first: secrets stay in the system key store instead of random config files.
+- It is small: pure Python with one standard cross-platform dependency.
 - It is explicit: no hidden background generation, no mystery side effects.
 - It is practical: easy to wire into approved repetitive login workflows.
 - It is auditable: the storage and generation path is short and readable.
 
 ## Requirements
 
-- macOS
+- macOS, Windows, or Linux
 - Python 3.11+
-- Access to the built-in `security` command
+- `pip install -r requirements.txt`
 - OpenClaw only if you want the skill behavior inside OpenClaw
 
 ## Quick start
+
+Install dependency:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
 
 Store a seed:
 
@@ -69,6 +76,14 @@ python3 scripts/totp_delete.py --alias github-work
 
 Place this folder inside your workspace skills directory or install it through ClawHub later. The skill instructs the agent to use the bundled scripts explicitly and safely.
 
+## Secure storage backends
+
+- macOS: Keychain
+- Windows: the backend exposed through `keyring`, typically Credential Manager
+- Linux: the backend exposed through `keyring`, typically Secret Service or KWallet
+
+On macOS, the scripts also keep a native fallback through the built-in `security` CLI if `keyring` is unavailable.
+
 ## Development
 
 Run tests:
@@ -88,11 +103,12 @@ python3 -m unittest discover -s tests
 Short pitch:
 
 > A local-first TOTP helper for OpenClaw users who want private, explicit, on-device code generation with macOS Keychain storage.
+> A local-first TOTP helper for OpenClaw users who want private, explicit, on-device code generation with system-vault-backed storage.
 
 Highlights:
 
 - Local-only secret handling
-- macOS Keychain backed storage
+- System-vault-backed storage
 - Fast 6-digit generation
 - Small and readable implementation
 - Built for legitimate, authorized access workflows

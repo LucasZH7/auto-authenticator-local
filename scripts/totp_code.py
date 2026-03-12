@@ -8,7 +8,7 @@ import json
 import sys
 
 from totp_common import generate_totp, normalize_seed
-from totp_keychain import fetch_seed
+from secret_store import backend_name, fetch_seed
 
 
 def main() -> int:
@@ -25,10 +25,11 @@ def main() -> int:
         return 1
 
     if args.json:
-        print(json.dumps({"alias": args.alias, "code": code, "expires_in": expires_in}))
+        print(json.dumps({"alias": args.alias, "code": code, "expires_in": expires_in, "backend": backend_name()}))
     else:
         print(code)
         print(f"expires_in={expires_in}")
+        print(f"backend={backend_name()}")
     return 0
 
 

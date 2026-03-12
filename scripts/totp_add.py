@@ -7,7 +7,7 @@ import argparse
 import sys
 
 from totp_common import normalize_seed
-from totp_keychain import store_seed
+from secret_store import store_seed
 
 
 def main() -> int:
@@ -20,12 +20,12 @@ def main() -> int:
 
     try:
         seed = normalize_seed(args.seed)
-        store_seed(args.alias, seed, issuer=args.issuer, account=args.account)
+        backend = store_seed(args.alias, seed, issuer=args.issuer, account=args.account)
     except Exception as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
 
-    print(f"Stored alias '{args.alias}' in macOS Keychain.")
+    print(f"Stored alias '{args.alias}' in secure storage ({backend}).")
     return 0
 
 
