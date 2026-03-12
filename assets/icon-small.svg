@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Auto Authenticator Local icon">
+  <rect width="128" height="128" rx="28" fill="#103A33"/>
+  <path d="M64 24c-14.4 0-26 11.6-26 26v10h-6c-5.5 0-10 4.5-10 10v28c0 5.5 4.5 10 10 10h64c5.5 0 10-4.5 10-10V70c0-5.5-4.5-10-10-10h-6V50c0-14.4-11.6-26-26-26Zm-14 36V50c0-7.7 6.3-14 14-14s14 6.3 14 14v10H50Z" fill="#D5F6E8"/>
+  <text x="64" y="91" text-anchor="middle" font-size="28" font-family="Menlo, Monaco, monospace" fill="#39D98A">123</text>
+</svg>

@@ -30,6 +30,14 @@ This project is not for bypassing MFA policy, evading anti-abuse systems, or hid
 - Use the same folder as an OpenClaw skill
 - Publishable to ClawHub as a transparent, local-first utility
 
+## Why people will like it
+
+- It is local-first: secrets stay in macOS Keychain instead of random config files.
+- It is small: pure Python plus built-in system tooling.
+- It is explicit: no hidden background generation, no mystery side effects.
+- It is practical: easy to wire into approved repetitive login workflows.
+- It is auditable: the storage and generation path is short and readable.
+
 ## Requirements
 
 - macOS
@@ -74,3 +82,17 @@ python3 -m unittest discover -s tests
 - GitHub repo: ready to publish as an open repository
 - ClawHub: publish as a public skill with privacy-first tags and a compliant description
 - Positioning: local TOTP helper, privacy-first, transparent, explicit, auditable
+
+## Suggested listing copy
+
+Short pitch:
+
+> A local-first TOTP helper for OpenClaw users who want private, explicit, on-device code generation with macOS Keychain storage.
+
+Highlights:
+
+- Local-only secret handling
+- macOS Keychain backed storage
+- Fast 6-digit generation
+- Small and readable implementation
+- Built for legitimate, authorized access workflows
