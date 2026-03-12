@@ -48,6 +48,14 @@ This project is not for bypassing MFA policy, evading anti-abuse systems, or hid
 
 ## Quick start
 
+One-line install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LucasZH7/auto-authenticator-local/main/install.sh | bash
+```
+
+This installer clones the repository into `~/.openclaw/skills/auto-authenticator-local` by default and installs Python dependencies locally for the tool.
+
 Install dependency:
 
 ```bash
